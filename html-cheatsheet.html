@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> This is the brains of the website </title>
+  <p>Metadata elements such as Link, Meta, Title and Style, typically go in the Head element.</p>
+</head>
+<body>
+  <h1>Header 1 - this is the visible part of the website in the browser</h1>
+
+  <h2>Paragraphs</h2>
+
+  <p>Html is made of elements. This text is written in a p (paragraph) tag, which has to be opened and closed</p>
+
+  <p>Paragraphs are split into blocks using separate p tags</p>
+
+  <h2>Comments</h2>
+
+  <p>You can leave comments that can only be read in the source code and are not visible on the webpage. See source code for comment</p>
+  <!-- hello this is a comment :) -->
+
+  <h2>Main tag</h2>
+
+  <main>
+  <p>The main tag shows the main content of the page, which helps search engines and other developers</p>
+  </main>
+
+  <h2>Images</h2>
+
+  <p>img tags use a src attribute to show the "source" of the image using the URL. img tags are self closing. They also include an alt attribute to provide a description of the image if it fails to load<p>
+  <img src="./duck.jpg" alt="A local image" width="200px">
+
+  <h2>Anchor elements</h2>
+
+  <p>Anchor elements or "a" elements are links to other webpages. They need a "href" (Hypertext REFerence) attribute to create the link. They also need anchor text.</p>
+  <a href="https://www.google.com">this links to Google.com </a>
+  <p>Anchor elements can also create internal links to different sections within the same webpage</p>
+  <a href="#header-4">Header-4</a>
+
+  <p>A target="_blank" attribute within an anchor element means the link opens in a new window tab so they aren't needed in an internal anchor link.<p>
+  <p>You can Nest links within other text elements. The normal text is wrapped in a p element. This is a <a target="_blank" href="https://www.facebook.com">link to facebook </a> it uses the target="_blank" attribute so will open in a new tab. The text "link to facebook" is the anchor text<p>
+  <p>You can add a deadlink to your website before you know where the anchor element will lead to. This is useful when you're changing the behaviour of a link using Javascript.</p>
+  <p>Instead of a href attributes value being a URL, it can be a hash symbol #, making it a deadlink</p>
+  <p>The href can also point to local files. For example, <a href="./html-cheatsheet.html">this</a> is a link to this page you're reading at the moment. Notice that the protocol and host part of the URL has been replaced by a "."</p>
+
+  <h2>Turning elements into a link</h2>
+
+  <p>You can make elements into a link by nesting them inside an anchor element</p>
+  <a target="_blank" href="https://en.wikipedia.org/wiki/Duck"><img src="./duck.jpg" alt="A local image" width="200px"></a>
+  <p>This turns the image of the duck into a link to the wikipedia page for ducks</p>
+
+  <h2>Lists</h2>
+
+  <p>You can create unordered, bullet-pointed lists using the ul element followed by li elements and closed with a /ul element.
+  <ul>
+    <li>How is my html cheatsheet looking?</li>
+    <li>I hope it is ok.</li>
+    <li>It seems to be working?</li>
+  </ul>
+
+  <p>You can create ordered, numbered lists using the ol element followed by li elements and closed with a /ol element.
+  <ol>
+    <li>html</li>
+    <li>CSS</li>
+    <li>User Experience UX</li>
+  </ol>
+
+  <h2>Tables</h2>
+  <p>Tables are defined using the table element. </p>
+  <table class='table'>
+    <tr>
+      <th>HTML</th>
+      <th>CSS</th>
+    </tr>
+    <tr>
+      <td>Markup language</td>
+      <td>Style Sheets</td>
+    </tr>
+    <tr>
+      <td>Structure</td>
+      <td>Presentation</td>
+    </tr>
+  </table>
+
+  <h2>Text Feilds</h2>
+  <p>Input elements get input from the user, for example a search box.</p>
+  <p>Input elements are self closing.Placeholder text can be used before the user has inputted anything.</p>
+
+  <input type="text" placeholder="this is placeholder text">
+
+  <h2>Form Elements</h2>
+  <p>You can create Form elements that submit data to a server using pure html.</p>
+  <h3>Submit Buttons</h3>
+  <p>A submit button on your form sends the data from your form to the URL specified in the form's Action attribute.
+  <h3>Required Feilds</h3>
+  <p>You can require users to fill in certain form feilds, for example an email would be required to sign up for an online service. This input is "required" and if the user tries to submit the form using the submit button the user is notified the feild is required.</p>
+
+  <form action="/url-where-you-want-to-submit-form-data"><input type="text" required>
+  <button type="submit">submit</button>
+  </form>
+
+  <h3>Radio Buttons</h3>
+  <p>Radio buttons are used when you want a user to only give you one answer from multiple choices.</p>
+  <p>Each radio button can be nested within it's own Label element. By wrapping an Input element inside a Label element it will automatically associate the radio input with the label element surrounding it - if you click the text the input will be selected.</p>
+  <p>All related radio buttons should have the same name attribute to create a radio button group. By creating a group, when one button is selected, all the other buttons will be automatically deselected. Ensuring only one answer is provided by the user.</p>
+  <p>It's best practice to set a For attribute on the Label element with a value that matches the Id attribute of the Input element. This allows assistive technologies to create a linked relationship between the Label and the child Input element.</p>
+
+  <form>
+  <label for="duck">
+      <input id="duck" type="radio"
+      name="duck-goose">duck
+  </label>
+
+  <label for="goose">
+      <input id="goose" type="radio"
+      name="duck-goose">goose
+  </label>
+  </form>
+
+  <h3>Checkboxes</h3>
+  <p>Checkbox inputs are commonly used for questions that may have more than one answer.</p>
+  <p>Each checkbox can be nested with it's own Label element. As with radio buttons above.</p>
+  <p>All related checkboxes should have the same Name attribute.</p>
+
+  <form>
+    <label for="heron">
+      <input id="heron" type ="checkbox"
+      name="aquatic birds">heron
+    </label>
+
+    <label for="swan">
+      <input id="swan" type="checkbox"
+      name="aquatic birds">swan
+    </label>
+  </form>
+
+  <h3>Check Radio Buttons and Checkboxes by default</h3>
+  <p>You can set a checkbox or radio button to be checked by default using the Checked attribute.</p>
+  <p>Add the word 'checked' inside the input element.</p>
+
+  <form>
+    <label>
+      <input type="radio"
+      name="native-trees" checked>
+      Oak
+    </label>
+
+    <label>
+      <input type="checkbox"
+      name="chocolates" checked>
+      Cadbury's
+    </label>
+
+    <div>
+    <h2>Div elements</h2>
+    <p>The Div elements nests many other elements within a single element. It can DIVide up the page. It has be both opened an closed.</p>
+    </div>
+
+  <h4 ="header-4"> Header 4 - this is a header</h4>
+
+</body>
+</html>
